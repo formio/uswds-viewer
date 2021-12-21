@@ -1,6 +1,6 @@
 {
   "name": "uswds-viewer",
-  "version": "2.1.8-rc.4",
+  "version": "2.1.8-rc.7",
   "description": "A Form.io form viewer application for US Web Design Standards",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "flatpickr": "4.6.6",
     "font-awesome": "^4.7.0",
     "formiojs": "^4.14.1-rc.4",
-    "i18next": "^21.6.2",
+    "i18next": "^21.6.3",
     "seamless": "^1.4.1",
     "uswds": "^2.12.2"
   },
