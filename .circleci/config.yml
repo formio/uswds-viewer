@@ -51,7 +51,6 @@ jobs:
               if [[ $CIRCLE_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
                 docker push $IMAGE_PATH
               fi
-              ./deployment/scripts/createVersion.sh $CIRCLE_TAG
             fi
 
 workflows:
