@@ -8,6 +8,9 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
+          name: Authenticate with PKG registry
+          command: echo "//pkg.form.io/:_authToken=$PKG_TOKEN" > ~/.npmrc
+      - run:
           name: Install npm modules
           command: npm install
       - save_cache:
