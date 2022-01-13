@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/formio/formio-viewer#readme",
   "dependencies": {
-    "@formio/premium": "github:formio/premium#v1.16.4",
-    "@formio/uswds": "github:formio/uswds#v2.3.8",
-    "@formio/vpat": "github:formio/vpat#v2.3.4",
+    "@formio/premium": "^1.16.4",
+    "@formio/uswds": "^2.3.8",
+    "@formio/vpat": "^2.3.4",
     "autocompleter": "^6.1.2",
     "core-js": "^3.16.0",
     "eventemitter2": "^6.4.4",
