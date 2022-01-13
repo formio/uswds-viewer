@@ -12,10 +12,7 @@ jobs:
           command: echo "//pkg.form.io/:_authToken=$PKG_TOKEN" > ~/.npmrc
       - run:
           name: Install npm modules
-          command: |
-            sudo npm i -g npm-cli-login
-            npm-cli-login -u $NPM_USERNAME -p $NPM_PASSWORD -e $NPM_EMAIL -r https://pkg.form.io
-            npm ci
+          command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
