@@ -4,7 +4,7 @@
   "description": "A Form.io form viewer application for US Web Design Standards",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build && webpack --config webpack.config.js  && gulp inlinesource",
+    "build": "gulp build && webpack --config webpack.config.js",
     "deploy": "npm run build && gulp deploy",
     "dev-deploy": "npm run build && gulp dev-deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,33 +20,32 @@
   },
   "homepage": "https://github.com/formio/formio-viewer#readme",
   "dependencies": {
-    "@formio/premium": "^1.17.2-rc.1",
-    "@formio/uswds": "^2.4.3",
-    "@formio/vpat": "^2.4.1",
+    "@formio/premium": "github:formio/premium#v1.16.4",
+    "@formio/uswds": "github:formio/uswds#v2.3.8",
+    "@formio/vpat": "github:formio/vpat#v2.3.4",
     "autocompleter": "^6.1.2",
-    "core-js": "^3.20.2",
-    "eventemitter2": "^6.4.5",
-    "flatpickr": "^4.6.9",
+    "core-js": "^3.16.0",
+    "eventemitter2": "^6.4.4",
+    "flatpickr": "4.6.6",
     "font-awesome": "^4.7.0",
-    "formiojs": "^4.14.1-rc.5",
-    "i18next": "^21.6.6",
+    "formiojs": "^4.13.5",
+    "i18next": "^20.3.5",
     "seamless": "^1.4.1",
-    "uswds": "^2.12.2"
+    "uswds": "2.11.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.7",
-    "@babel/plugin-proposal-export-default-from": "^7.16.7",
-    "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-env": "^7.15.0",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^8.2.2",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-inline-source": "^4.0.0",
     "gulp-load-plugins": "^2.0.7",
     "gulp-minify-css": "^1.2.3",
     "gulp-rename": "^2.0.0",
@@ -54,8 +53,8 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^3.0.2",
     "vinyl-source-stream": "^2.0.0",
-    "webpack": "^5.66.0",
+    "webpack": "^5.49.0",
     "webpack-auto-inject-version": "^1.2.2",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.7.2"
   }
 }

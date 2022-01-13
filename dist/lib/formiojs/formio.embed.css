@@ -1,7 +1,6 @@
 .formio-loader {
   position: relative;
-  min-height: 60px;
-}
+  min-height: 60px; }
 
 .loader-wrapper {
   z-index: 1000;
@@ -11,8 +10,7 @@
   bottom: 0px;
   right: 0px;
   height: 120px;
-  background-color: rgba(0, 0, 0, 0);
-}
+  background-color: rgba(0, 0, 0, 0); }
 
 .loader {
   position: absolute;
@@ -29,14 +27,10 @@
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: spin 2s linear infinite;
-}
+  animation: spin 2s linear infinite; }
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   100% {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
