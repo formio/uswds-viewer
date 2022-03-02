@@ -31,7 +31,7 @@
     "formiojs": "^4.14.2",
     "i18next": "^21.6.11",
     "seamless": "^1.4.1",
-    "uswds": "2.11.2"
+    "uswds": "2.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.0",
