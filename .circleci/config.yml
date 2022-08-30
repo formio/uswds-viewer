@@ -12,7 +12,7 @@ jobs:
           command: echo "//pkg.form.io/:_authToken=$PKG_TOKEN" > ~/.npmrc
       - run:
           name: Install npm modules
-          command: npm install
+          command: npm install --legacy-peer-deps
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
