@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased: 3.0.0-rc.2]
 ### Changed
+ - Updated formiojs@4.14.9-rc.9
+ - Updated @formio/premium@1.18.6-rc.4
+ - Updated @formio/uswds@2.4.8-rc.1
+ - Updated @formio/vpat@2.4.3-rc.1
+
+### Changed
  - Upgrade dependencies.
 
 ## 3.0.0-rc.1
