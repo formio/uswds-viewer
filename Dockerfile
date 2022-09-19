@@ -19,5 +19,5 @@
 ##                                                   ##
 #######################################################
 
-FROM formio/pdf-server:3.3.9
+FROM formio/pdf-server:3.3.9-patch.1
 COPY ./dist /src/node_modules/formio-viewer/dist/
