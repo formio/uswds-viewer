@@ -9,7 +9,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Authenticate with PKG registry
-          command: echo "//pkg.form.io/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: Install npm modules
           command: yarn install
