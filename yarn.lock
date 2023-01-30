@@ -963,9 +963,9 @@
     fuse.js "^3.4.5"
     redux "^4.0.4"
 
-"@formio/premium@github:formio/premium#v1.18.6-rc.8":
-  version "1.18.6-rc.8"
-  resolved "git+ssh://git@github.com/formio/premium.git#fad5c6a72d64e6b19afff3043bc8b6bdba80e288"
+"@formio/premium@github:formio/premium#v1.18.8":
+  version "1.18.8"
+  resolved "git+ssh://git@github.com/formio/premium.git#5864fe869305001e604bb589349e81368047b465"
   dependencies:
     "@zxing/library" "^0.18.6"
     dayjs "^1.10.6"
@@ -987,19 +987,19 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.4.8-rc.1":
-  version "2.4.8-rc.1"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.4.8-rc.1.tgz#9acafdfbdcd1eb913906e593cc56205fa23441d2"
-  integrity sha512-jwxlrqqKLpmXTUrKkqOeaEYQwZehSnWqCjz9OuHE1veAJGVUemhQTuznTOZFw5TfGNbUO+DwL0KpoFWIn6BBCw==
+"@formio/uswds@2.4.8":
+  version "2.4.8"
+  resolved "https://registry.npmjs.org/@formio/uswds/-/uswds-2.4.8.tgz#6b1d7bd40b91ba62b23a494d3a8c86805ebf8912"
+  integrity sha512-sBEwGxbcs52w9yZQV2Bg8Z89e5aV4fqH1b+UxeM31KduXlqLuG7KHMbd6ZA8ifyUiR8bGwBoZXGHSlXhTIlgMQ==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
   resolved "https://registry.yarnpkg.com/@formio/vanilla-text-mask/-/vanilla-text-mask-5.1.1-formio.1.tgz#f53fc7f4cb37c6ae38f2857488055e781e5adba9"
   integrity sha512-rYBlvIPMNUd6sAaduOaiIwI4vfTAjHDRonko2qJn2RP1O//TQ7rcFIPYVYePJZ4OtOpwHiHAvAIh79McphZotQ==
 
-"@formio/vpat@github:formio/vpat#v2.4.3-rc.1":
-  version "2.4.3-rc.1"
-  resolved "git+ssh://git@github.com/formio/vpat.git#0ae3bc1afd0f9676d1ac539f6f4d2f3ebc40f71e"
+"@formio/vpat@github:formio/vpat#v2.5.0-rc.1":
+  version "2.5.0-rc.1"
+  resolved "git+ssh://git@github.com/formio/vpat.git#ee1f56959b96a408fb50cc039705c7798da3e1fd"
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
@@ -3009,10 +3009,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.14.9-rc.17:
-  version "4.14.9-rc.17"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.14.9-rc.17.tgz#aaa9aa18d5e8ab524e50252323788930b472fb67"
-  integrity sha512-6FitWUoP5c+MHS80WOOtHGgEDQVmEqUJvFrKBp6FKfUl/RzSjhrLGPN/671GLYdMhCS/4gewERCDhx5GnTRYkg==
+formiojs@4.14.12:
+  version "4.14.12"
+  resolved "https://registry.npmjs.org/formiojs/-/formiojs-4.14.12.tgz#594811e85fb4ab4397ceea76216e36f39236abe8"
+  integrity sha512-7wPUaOawQJd1hU0Bmx7BJtmQWiiCmj3N7dFnLaZRvwVnnDKdcqNVwTELiXWSDROCXeaTA6KnATAL32pvbwqyng==
   dependencies:
     "@formio/bootstrap3" "^2.12.2"
     "@formio/choices.js" "^9.0.1"
@@ -3040,8 +3040,8 @@ formiojs@4.14.9-rc.17:
     jstimezonedetect "^1.0.7"
     jwt-decode "^3.1.2"
     lodash "^4.17.21"
-    moment "^2.29.2"
-    moment-timezone "^0.5.34"
+    moment "^2.29.4"
+    moment-timezone "^0.5.40"
     native-promise-only "^0.8.1"
     quill "^2.0.0-dev.3"
     resize-observer-polyfill "^1.5.1"
@@ -4656,16 +4656,16 @@ mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.6"
 
-moment-timezone@^0.5.34:
-  version "0.5.37"
-  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.37.tgz#adf97f719c4e458fdb12e2b4e87b8bec9f4eef1e"
-  integrity sha512-uEDzDNFhfaywRl+vwXxffjjq1q0Vzr+fcQpQ1bU0kbzorfS7zVtZnCnGc8mhWmF39d4g4YriF6kwA75mJKE/Zg==
+moment-timezone@^0.5.40:
+  version "0.5.40"
+  resolved "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.40.tgz#c148f5149fd91dd3e29bf481abc8830ecba16b89"
+  integrity sha512-tWfmNkRYmBkPJz5mr9GVDn9vRlVZOTe6yqY92rFxiOdWXbjaR0+9LwQnZGGuNR63X456NqmEkbskte8tWL5ePg==
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.29.2:
+"moment@>= 2.9.0", moment@^2.29.4:
   version "2.29.4"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 ms@2.0.0:

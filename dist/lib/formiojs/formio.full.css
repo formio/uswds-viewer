@@ -3344,6 +3344,13 @@ body.formio-dialog-open {
   transition: opacity 200ms linear, visibility 0ms 200ms;
 }
 
+.formio-component-datagrid {
+  overflow-x: auto;
+}
+.formio-component-datagrid .datagrid-table, .formio-component-datagrid .datagrid-table td, .formio-component-datagrid .datagrid-table th {
+  border: 3px solid #ddd !important;
+  padding: 10px;
+}
 .formio-component-datagrid .datagrid-table > tbody > tr > td:last-child {
   position: relative;
 }
@@ -3786,6 +3793,7 @@ div[data-oembed-url] {
 
 .formio-form > div > nav > ul.pagination {
   flex-flow: wrap row;
+  justify-content: flex-start;
 }
 .formio-form > div > nav > ul.pagination .page-link {
   cursor: pointer;
@@ -3994,6 +4002,10 @@ div[data-oembed-url] {
   font-weight: normal;
 }
 
+.ace_editor, .ace_editor div, .ace_editor span {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace !important;
+}
+
 span[role=link] {
   text-decoration: underline;
   cursor: pointer;
@@ -4149,7 +4161,7 @@ span[role=link] {
 
 .builder-sidebar_scroll {
   position: sticky;
-  top: 30px;
+  top: 15px;
   max-height: 100vh;
   overflow-y: auto;
 }
