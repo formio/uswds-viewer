@@ -963,9 +963,9 @@
     fuse.js "^3.4.5"
     redux "^4.0.4"
 
-"@formio/premium@github:formio/premium#v1.18.6-rc.8":
-  version "1.18.6-rc.8"
-  resolved "git+ssh://git@github.com/formio/premium.git#fad5c6a72d64e6b19afff3043bc8b6bdba80e288"
+"@formio/premium@github:formio/premium#v1.18.6":
+  version "1.18.6"
+  resolved "git+ssh://git@github.com/formio/premium.git#45d7af77a159b4b40b5d9cd6f47107efcc1f8212"
   dependencies:
     "@zxing/library" "^0.18.6"
     dayjs "^1.10.6"
@@ -987,19 +987,19 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.4.8-rc.1":
-  version "2.4.8-rc.1"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.4.8-rc.1.tgz#9acafdfbdcd1eb913906e593cc56205fa23441d2"
-  integrity sha512-jwxlrqqKLpmXTUrKkqOeaEYQwZehSnWqCjz9OuHE1veAJGVUemhQTuznTOZFw5TfGNbUO+DwL0KpoFWIn6BBCw==
+"@formio/uswds@2.4.8":
+  version "2.4.8"
+  resolved "https://registry.npmjs.org/@formio/uswds/-/uswds-2.4.8.tgz#6b1d7bd40b91ba62b23a494d3a8c86805ebf8912"
+  integrity sha512-sBEwGxbcs52w9yZQV2Bg8Z89e5aV4fqH1b+UxeM31KduXlqLuG7KHMbd6ZA8ifyUiR8bGwBoZXGHSlXhTIlgMQ==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
   resolved "https://registry.yarnpkg.com/@formio/vanilla-text-mask/-/vanilla-text-mask-5.1.1-formio.1.tgz#f53fc7f4cb37c6ae38f2857488055e781e5adba9"
   integrity sha512-rYBlvIPMNUd6sAaduOaiIwI4vfTAjHDRonko2qJn2RP1O//TQ7rcFIPYVYePJZ4OtOpwHiHAvAIh79McphZotQ==
 
-"@formio/vpat@github:formio/vpat#v2.4.3-rc.1":
-  version "2.4.3-rc.1"
-  resolved "git+ssh://git@github.com/formio/vpat.git#0ae3bc1afd0f9676d1ac539f6f4d2f3ebc40f71e"
+"@formio/vpat@github:formio/vpat#v2.5.0-rc.1":
+  version "2.5.0-rc.1"
+  resolved "git+ssh://git@github.com/formio/vpat.git#ee1f56959b96a408fb50cc039705c7798da3e1fd"
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
@@ -3009,10 +3009,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.14.9-rc.17:
-  version "4.14.9-rc.17"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.14.9-rc.17.tgz#aaa9aa18d5e8ab524e50252323788930b472fb67"
-  integrity sha512-6FitWUoP5c+MHS80WOOtHGgEDQVmEqUJvFrKBp6FKfUl/RzSjhrLGPN/671GLYdMhCS/4gewERCDhx5GnTRYkg==
+formiojs@4.14.9:
+  version "4.14.9"
+  resolved "https://registry.npmjs.org/formiojs/-/formiojs-4.14.9.tgz#cfc519a96436d1051face2ce7e930ae895b0e8e0"
+  integrity sha512-Cn+l1Y/vpDkJGcH79c3FVClZ7xIynf1Fa0zYW4Z5ahdd8vlN8rnGhbJ53woX9oWwpaO+vISKicWGxG5tM0K8Yw==
   dependencies:
     "@formio/bootstrap3" "^2.12.2"
     "@formio/choices.js" "^9.0.1"
