@@ -2423,10 +2423,8 @@ dialog.fixed {
   margin-top: -30px;
   z-index: 10000;
   display: inline-block;
-  border: 6px solid #f3f3f3;
-  /* Light grey */
-  border-top: 6px solid #3498db;
-  /* Blue */
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid #3498db; /* Blue */
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -2476,7 +2474,9 @@ dialog.fixed {
 .builder-component.has-error .invalid-feedback,
 .formio-component.has-error .invalid-feedback,
 .formio-component.alert-danger .invalid-feedback,
-.formio-component.has-message .invalid-feedback {
+.formio-component.has-message .invalid-feedback,
+.formio-component-modal-wrapper.has-message .invalid-feedback,
+.formio-component-modal-wrapper.has-error .invalid-feedback {
   display: block;
   color: inherit;
   margin-top: 4px;
@@ -3279,6 +3279,10 @@ body.formio-dialog-open {
   margin-bottom: 0;
 }
 
+.formio-component-htmlelement {
+  word-wrap: break-word;
+}
+
 .editgrid-table-container {
   margin-bottom: 10px;
   max-width: calc(100vw - 140px);
@@ -3340,6 +3344,13 @@ body.formio-dialog-open {
   transition: opacity 200ms linear, visibility 0ms 200ms;
 }
 
+.formio-component-datagrid {
+  overflow-x: auto;
+}
+.formio-component-datagrid .datagrid-table, .formio-component-datagrid .datagrid-table td, .formio-component-datagrid .datagrid-table th {
+  border: 3px solid #ddd !important;
+  padding: 10px;
+}
 .formio-component-datagrid .datagrid-table > tbody > tr > td:last-child {
   position: relative;
 }
@@ -3782,6 +3793,7 @@ div[data-oembed-url] {
 
 .formio-form > div > nav > ul.pagination {
   flex-flow: wrap row;
+  justify-content: flex-start;
 }
 .formio-form > div > nav > ul.pagination .page-link {
   cursor: pointer;
@@ -3990,6 +4002,10 @@ div[data-oembed-url] {
   font-weight: normal;
 }
 
+.ace_editor, .ace_editor div, .ace_editor span {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace !important;
+}
+
 span[role=link] {
   text-decoration: underline;
   cursor: pointer;
@@ -4146,6 +4162,8 @@ span[role=link] {
 .builder-sidebar_scroll {
   position: sticky;
   top: 15px;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .builder-sidebar_search {
