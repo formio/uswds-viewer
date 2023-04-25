@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased: 4.0.1-rc.2]
 ### Changed
  - Updated dependencies.
- - Changed pdf-server:5.0.1-rc.2
+ - Changed pdf-server:5.0.1-rc.5
 
 ## 4.0.0-rc.1
 ### Changed
