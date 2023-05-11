@@ -4,7 +4,12 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.1.0-rc.2]
+## 5.1.0-rc.2
+### Changed
+ - Updated formiojs@4.15.0-rc.22
+ - Updated @formio/premium@1.19.0-rc.8
+ - Updated @formio/vpat@2.5.1-rc.1
+
 
 ## 4.0.2
 ### Changed
