@@ -992,9 +992,9 @@
   resolved "https://registry.yarnpkg.com/@formio/vanilla-text-mask/-/vanilla-text-mask-5.1.1.tgz#2bd690a34b0e191b7f23a589ff1c2497564307de"
   integrity sha512-7MhrbMypySPi7RLchg0ys7HnS3Wqddbq/btAijKB1nA94TE7AOOLhpZJWcNm3kOlX0Y3nHfoavj/HP7vsvF34Q==
 
-"@formio/vpat@github:formio/vpat#v2.5.1-rc.1":
-  version "2.5.1-rc.1"
-  resolved "git+ssh://git@github.com/formio/vpat.git#906d9e14ef4b976daff5c19203697d1f7a2bff14"
+"@formio/vpat@github:formio/vpat#v2.5.0-rc.1":
+  version "2.5.0-rc.1"
+  resolved "git+ssh://git@github.com/formio/vpat.git#ee1f56959b96a408fb50cc039705c7798da3e1fd"
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
