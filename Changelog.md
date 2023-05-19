@@ -4,10 +4,7 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 3.3.9-patch.6
-### Changed
- - Updated @formio/vpat@2.5.1-rc.1
-
+## [Unreleased: 3.3.9-patch.6]
 ## 3.0.0-rc.4
 ### Changed
  - Updated formiojs@4.14.9
