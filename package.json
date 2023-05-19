@@ -1,6 +1,6 @@
 {
   "name": "uswds-viewer",
-  "version": "2.1.11-patch.5",
+  "version": "2.1.11-patch.6",
   "description": "A Form.io form viewer application for US Web Design Standards",
   "main": "index.js",
   "scripts": {

@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 2.1.11-patch.6]
+## 2.1.11-patch.6
 ### Changed
  - Upgrade core docker to pdf-server:3.3.9-patch.6
 
