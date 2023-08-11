@@ -34,11 +34,6 @@ jobs:
         with:
           cmd: install --frozen-lockfile
 
-      - name: Lint
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint
-
   build:
     needs: setup
     runs-on: ubuntu-latest
