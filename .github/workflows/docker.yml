@@ -31,4 +31,4 @@ jobs:
     - name: Push image to dockerhub
       run: |
         docker tag $IMAGE_PATH $IMAGE_PATH:${{ github.ref_name }}
-        ocker push $IMAGE_PATH:${{ github.ref_name }}
+        docker push $IMAGE_PATH:${{ github.ref_name }}
