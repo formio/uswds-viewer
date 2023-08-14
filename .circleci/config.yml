@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   run_circle_ci:
     type: boolean
-    default: true
+    default: false
 
 commands:
   check-run-condition:
