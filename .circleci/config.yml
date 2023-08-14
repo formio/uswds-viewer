@@ -3,13 +3,26 @@ version: 2.1
 parameters:
   run_circle_ci:
     type: boolean
-    default: false ## Disable Circle CI, use for Validation against GH actions
+    default: false
+
+commands:
+  check-run-condition:
+    description: "Check if the job should run based on pipeline parameter"
+    steps:
+      - run:
+          name: Checking if job should run
+          command: |
+            if [ "<< pipeline.parameters.run_circle_ci >>" = "false" ]; then
+              echo "Job halted based on pipeline parameter."
+              circleci-agent step halt
+            fi
 
 jobs:
   build:
     docker:
       - image: cimg/node:lts
     steps:
+      - check-run-condition
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -39,6 +52,7 @@ jobs:
     docker:
       - image: cimg/node:lts
     steps:
+      - check-run-condition
       - setup_remote_docker:
           version: 19.03.13
       - checkout
@@ -64,12 +78,10 @@ workflows:
   do-build:
     jobs:
       - build:
-          when: << pipeline.parameters.run_circle_ci >>
           filters:
             tags:
               only: /.*/
       - docker:
-          when: << pipeline.parameters.run_circle_ci >>
           requires:
             - build
           filters:
