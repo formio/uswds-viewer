@@ -19,5 +19,11 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_KEY }}
 
-    - name: Create container
+    - name: Create image
       run: docker build --no-cache -t $IMAGE_PATH .
+
+    - name: Push image to dockerhub
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+        docker tag $IMAGE_PATH $IMAGE_PATH:${{ github.ref }}
+        ocker push $IMAGE_PATH:${{ github.ref }}
