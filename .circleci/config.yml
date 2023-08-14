@@ -1,4 +1,10 @@
 version: 2.1
+
+parameters:
+  run_circle_ci:
+    type: boolean
+    default: false ## Disable Circle CI, use for Validation against GH actions
+
 jobs:
   build:
     docker:
@@ -41,27 +47,29 @@ jobs:
       - run: 
           name: Docker Build
           command: docker build --no-cache -t $IMAGE_PATH .
-      # - run:
-      #     name: deploy
-      #     command: |
-      #       if [[ $CIRCLE_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
-      #         docker login -u $DOCKER_USER -p $DOCKER_PASS
-      #         docker tag $IMAGE_PATH $IMAGE_PATH:$CIRCLE_TAG
-      #         docker push $IMAGE_PATH:$CIRCLE_TAG
-      #         if [[ $CIRCLE_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-      #           docker push $IMAGE_PATH
-      #         fi
-      #       fi
+      - run:
+          name: deploy
+          command: |
+            if [[ $CIRCLE_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              docker tag $IMAGE_PATH $IMAGE_PATH:$CIRCLE_TAG
+              docker push $IMAGE_PATH:$CIRCLE_TAG
+              if [[ $CIRCLE_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                docker push $IMAGE_PATH
+              fi
+            fi
 
 workflows:
   version: 2.1
   do-build:
     jobs:
       - build:
+          when: << pipeline.parameters.run_circle_ci >>
           filters:
             tags:
               only: /.*/
       - docker:
+          when: << pipeline.parameters.run_circle_ci >>
           requires:
             - build
           filters:
