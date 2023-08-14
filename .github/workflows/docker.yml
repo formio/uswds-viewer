@@ -32,3 +32,4 @@ jobs:
       run: |
         docker tag $IMAGE_PATH $IMAGE_PATH:${{ github.ref_name }}
         docker push $IMAGE_PATH:${{ github.ref_name }}
+        
