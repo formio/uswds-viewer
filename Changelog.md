@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.2.0-rc.6]
+## 5.2.0-rc.6
+### Changed
+ - Updated formiojs@4.16.0-rc.11
+
 ### Changed
  - Updated pdf-server@5.2.0-rc.6
    
