@@ -107,8 +107,8 @@ jobs:
       - name: Install awscli
         run: |
           ls ${{ github.workspace }}
-          sudo apt-get update
-          sudo apt install -y awscli
+          apt-get update
+          apt install -y awscli
       - name: Stop running tasks
         run: |
           # List running tasks for the specific Task Definition and Cluster
