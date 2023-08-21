@@ -48,7 +48,7 @@ jobs:
           --launch-type FARGATE \
           --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
       - name: Allow sleep for boot
-        run: sleep 10
+        run: sleep 30
         
   setup:
     needs: runner
