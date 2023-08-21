@@ -101,14 +101,9 @@ jobs:
 
   stop:
     needs: [runner, setup, build]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: always()
     steps:
-      - name: Install awscli
-        run: |
-          ls ${{ github.workspace }}
-          apt-get update
-          apt install -y awscli
       - name: Stop running tasks
         run: |
           # List running tasks for the specific Task Definition and Cluster
