@@ -113,7 +113,7 @@ jobs:
       - name: Stop running tasks
         run: |
           # List running tasks for the specific Task Definition and Cluster
-          TASKS=$(aws ecs list-tasks --region $REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
+          TASKS=$(aws ecs list-tasks --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
 
           if [ -z "$TASKS" ]; then
               echo "No tasks found to stop for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
@@ -122,7 +122,7 @@ jobs:
           # Stop each task found for the provided Task Definition and Cluster
           for TASK_ARN in $TASKS; do
               echo "Stopping task: $TASK_ARN"
-              aws ecs stop-task --region $REGION --cluster $CLUSTER_NAME --task $TASK_ARN
+              aws ecs stop-task --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --task $TASK_ARN
           done
 
           echo "All tasks have been stopped for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
