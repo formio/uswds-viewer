@@ -4,17 +4,16 @@ on: push
 
 env:
   NODE_VERSION: 18.x
+  AWS_DEFAULT_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  CLUSTER_NAME: formio-gh-runner
+  TASK_DEF_NAME: task-defintion-gh-actions
 
 jobs:
   runner:
     if: true
     runs-on: ubuntu-latest
-    env:
-      AWS_DEFAULT_REGION: us-east-1
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      CLUSTER_NAME: formio-gh-runner
-      TASK_DEF_NAME: task-defintion-gh-actions
     steps:
       - name: Install awscli
         run: |
@@ -47,8 +46,6 @@ jobs:
           --task-definition $TASK_DEF_NAME \
           --launch-type FARGATE \
           --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
-      - name: Allow sleep for boot
-        run: sleep 40
         
   setup:
     needs: runner
@@ -68,7 +65,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: 'yarn'
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -103,4 +100,24 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: build
-          
+
+  stop:
+    needs: [runner, setup, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stop running tasks
+        run: |
+          # List running tasks for the specific Task Definition and Cluster
+          TASKS=$(aws ecs list-tasks --region $REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
+
+          if [ -z "$TASKS" ]; then
+              echo "No tasks found to stop for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
+              exit 1
+          fi
+          # Stop each task found for the provided Task Definition and Cluster
+          for TASK_ARN in $TASKS; do
+              echo "Stopping task: $TASK_ARN"
+              aws ecs stop-task --region $REGION --cluster $CLUSTER_NAME --task $TASK_ARN
+          done
+
+          echo "All tasks have been stopped for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
