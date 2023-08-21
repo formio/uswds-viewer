@@ -47,6 +47,9 @@ jobs:
           --task-definition $TASK_DEF_NAME \
           --launch-type FARGATE \
           --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
+      - name: Allow sleep for boot
+        run: sleep 10
+        
   setup:
     needs: runner
     runs-on: self-hosted
