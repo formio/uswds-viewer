@@ -104,6 +104,7 @@ jobs:
   stop:
     needs: [runner, setup, build]
     runs-on: ubuntu-latest
+    if: always()
     steps:
       - name: Stop running tasks
         run: |
