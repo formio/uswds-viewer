@@ -7,7 +7,7 @@ env:
 
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: echo "Triggered by ${{ github.event_name }} event."
 
@@ -41,7 +41,7 @@ jobs:
 
   build:
     needs: setup
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Check out repository code ${{ github.repository }} on ${{ github.ref }}
         uses: actions/checkout@v3
