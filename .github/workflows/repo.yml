@@ -6,7 +6,49 @@ env:
   NODE_VERSION: 18.x
 
 jobs:
+  runner:
+    if: true
+    runs-on: ubuntu-latest
+    env:
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      CLUSTER_NAME: formio-gh-runner
+      TASK_DEF_NAME: task-defintion-gh-actions
+    steps:
+      - name: Install awscli
+        run: |
+          ls ${{ github.workspace }}
+          sudo apt-get update
+          sudo apt install -y awscli
+      - name: Check for existing runner
+        run: |
+          # Check if a task for the given Task Definition is already running in the specified Cluster
+          EXISTING_TASKS=$(aws ecs list-tasks --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
+
+          if [ ! -z "$EXISTING_TASKS" ]; then
+              echo "A task for the Task Definition: $TASK_DEF_NAME is already running in the Cluster: $CLUSTER_NAME. Exiting."
+              exit 1
+          fi
+      - name: Start Fargate runner
+        run: |
+          # Fetch the first available subnet in the region
+          SUBNETS=$(aws ec2 describe-subnets --region $AWS_DEFAULT_REGION --query 'Subnets[0].SubnetId' --output text)
+
+          # Optionally, fetch the first available security group in the region
+          SEC_GROUPS=$(aws ec2 describe-security-groups --region $AWS_DEFAULT_REGION --query 'SecurityGroups[0].GroupId' --output text)
+
+          echo "Using Subnet: $SUBNETS"
+          echo "Using Security Group: $SEC_GROUPS"
+
+          aws ecs run-task \
+          --region $AWS_DEFAULT_REGION \
+          --cluster $CLUSTER_NAME \
+          --task-definition $TASK_DEF_NAME \
+          --launch-type FARGATE \
+          --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
   setup:
+    needs: runner
     runs-on: self-hosted
     steps:
       - run: echo "Triggered by ${{ github.event_name }} event."
