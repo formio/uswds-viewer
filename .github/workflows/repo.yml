@@ -27,30 +27,24 @@ jobs:
           
           if [ ! -z "$EXISTING_TASKS" ]; then
               echo "A task for the Task Definition: $TASK_DEF_NAME is already running in the Cluster: $CLUSTER_NAME."
-              echo "::set-output name=taskExists::true"
           else
-              echo "::set-output name=taskExists::false"
+              # Fetch the first available subnet in the region
+              SUBNETS=$(aws ec2 describe-subnets --region $AWS_DEFAULT_REGION --query 'Subnets[0].SubnetId' --output text)
+
+              # Optionally, fetch the first available security group in the region
+              SEC_GROUPS=$(aws ec2 describe-security-groups --region $AWS_DEFAULT_REGION --query 'SecurityGroups[0].GroupId' --output text)
+
+              echo "Using Subnet: $SUBNETS"
+              echo "Using Security Group: $SEC_GROUPS"
+
+              aws ecs run-task \
+              --region $AWS_DEFAULT_REGION \
+              --cluster $CLUSTER_NAME \
+              --task-definition $TASK_DEF_NAME \
+              --launch-type FARGATE \
+              --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
           fi
 
-      - name: Start Fargate runner
-        if: steps.checkrunner.outputs.taskExists == 'false'
-        run: |
-          # Fetch the first available subnet in the region
-          SUBNETS=$(aws ec2 describe-subnets --region $AWS_DEFAULT_REGION --query 'Subnets[0].SubnetId' --output text)
-
-          # Optionally, fetch the first available security group in the region
-          SEC_GROUPS=$(aws ec2 describe-security-groups --region $AWS_DEFAULT_REGION --query 'SecurityGroups[0].GroupId' --output text)
-
-          echo "Using Subnet: $SUBNETS"
-          echo "Using Security Group: $SEC_GROUPS"
-
-          aws ecs run-task \
-          --region $AWS_DEFAULT_REGION \
-          --cluster $CLUSTER_NAME \
-          --task-definition $TASK_DEF_NAME \
-          --launch-type FARGATE \
-          --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
-        
   setup:
     needs: runner
     runs-on: self-hosted
