@@ -9,6 +9,9 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   CLUSTER_NAME: formio-gh-runner
   TASK_DEF_NAME: task-defintion-gh-actions
+  GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+  VALID_RUNNER_THRESHOLD: 10
+  SLEEP_TIMER: 40
 
 ## Jobs
 jobs:
@@ -20,7 +23,113 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           sudo apt-get update
-          sudo apt install -y awscli
+          sudo apt install -y awscli jq curl
+      - name: Check for valid task-defintion-gh-actions
+        run: |
+          # Get registeredAt timestamp of the latest task definition revision
+          REGISTERED_TIMESTAMP=$(aws ecs describe-task-definition --task-definition $TASK_DEF_NAME --region $REGION --query "taskDefinition.registeredAt" --output text)
+
+          if [ $? -ne 0 ]; then
+              echo "Error retrieving the latest revision for task definition: $TASK_DEF_NAME"
+              exit 2
+          fi
+
+          # Convert the registeredAt timestamp to seconds since the Unix epoch
+          REGISTERED_EPOCH=$(date --date="$REGISTERED_TIMESTAMP" +%s)
+
+          # Get the current timestamp in seconds since the Unix epoch
+          CURRENT_EPOCH=$(date +%s)
+
+          # Calculate the difference in seconds
+          DIFF_SECONDS=$((CURRENT_EPOCH - REGISTERED_EPOCH))
+
+          # Check if the difference is less than or equal to 3600 seconds (1 hour)
+          if [ $DIFF_SECONDS -le $VALID_RUNNER_THRESHOLD ]; then
+              echo "true"
+          else
+              # Obtain the GitHub runner registration token using curl
+              RESPONSE_JSON=$(curl -s -L \
+              -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_ACCESS_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              https://api.github.com/repos/formio/uswds-viewer/actions/runners/registration-token)
+
+              echo "$RESPONSE_JSON"
+
+              # Extract the token from the JSON response using jq
+              TOKEN=$(echo "$RESPONSE_JSON" | jq -r '.token')
+
+              # Construct the task definition JSON and replace the RUNNER_TOKEN value
+              TASK_DEFINITION_JSON=$(cat <<-EOF
+          {
+              "containerDefinitions": [
+                  {
+                      "name": "github-runner",
+                      "image": "ryaneggz/github-runner",
+                      "cpu": 0,
+                      "portMappings": [],
+                      "essential": true,
+                      "environment": [
+                          {
+                              "name": "REPO_URL",
+                              "value": "https://github.com/formio/uswds-viewer"
+                          },
+                          {
+                              "name": "RUNNER_TOKEN",
+                              "value": ""
+                          }
+                      ],
+                      "mountPoints": [],
+                      "volumesFrom": [],
+                      "logConfiguration": {
+                          "logDriver": "awslogs",
+                          "options": {
+                              "awslogs-create-group": "true",
+                              "awslogs-group": "/ecs/expess-gh-actions-def",
+                              "awslogs-region": "us-east-1",
+                              "awslogs-stream-prefix": "ecs"
+                          }
+                      }
+                  }
+              ],
+              "family": "task-defintion-gh-actions",
+              "executionRoleArn": "arn:aws:iam::551091399009:role/ecsTaskExecutionRole",
+              "networkMode": "awsvpc",
+              "volumes": [],
+              "placementConstraints": [],
+              "requiresCompatibilities": [
+                  "FARGATE"
+              ],
+              "cpu": "1024",
+              "memory": "3072",
+              "runtimePlatform": {
+                  "cpuArchitecture": "X86_64",
+                  "operatingSystemFamily": "LINUX"
+              }
+          }
+          EOF
+              )
+
+
+              # Update the RUNNER_TOKEN in the task definition JSON using jq
+              UPDATED_JSON=$(echo "$TASK_DEFINITION_JSON" | jq --arg runner_token "$TOKEN" '.containerDefinitions[0].environment = (.containerDefinitions[0].environment | map(if .name=="RUNNER_TOKEN" then .value = $runner_token else . end))')
+
+              # Save the updated JSON to a temporary file
+              TEMP_JSON_FILE=$(mktemp)
+              echo "$UPDATED_JSON" > $TEMP_JSON_FILE
+
+              # Register the ECS task definition using the updated JSON
+              aws ecs register-task-definition \
+              --region $REGION \
+              --cli-input-json file://$TEMP_JSON_FILE
+
+              # Clean up by removing the temporary file
+              rm -f $TEMP_JSON_FILE
+
+              echo "$UPDATED_JSON"
+          fi
+      
       - name: Check for existing runner
         run: |
           # Check if a task for the given Task Definition is already running in the specified Cluster
@@ -45,7 +154,7 @@ jobs:
               --launch-type FARGATE \
               --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
 
-              sleep 40
+              sleep $SLEEP_TIMER
           fi
 
   setup:
