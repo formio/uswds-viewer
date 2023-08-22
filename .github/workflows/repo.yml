@@ -27,7 +27,7 @@ jobs:
       - name: Check for valid task-defintion-gh-actions
         run: |
           # Get registeredAt timestamp of the latest task definition revision
-          REGISTERED_TIMESTAMP=$(aws ecs describe-task-definition --task-definition $TASK_DEF_NAME --region $REGION --query "taskDefinition.registeredAt" --output text)
+          REGISTERED_TIMESTAMP=$(aws ecs describe-task-definition --task-definition $TASK_DEF_NAME --region $AWS_DEFAULT_REGION --query "taskDefinition.registeredAt" --output text)
 
           if [ $? -ne 0 ]; then
               echo "Error retrieving the latest revision for task definition: $TASK_DEF_NAME"
@@ -121,7 +121,7 @@ jobs:
 
               # Register the ECS task definition using the updated JSON
               aws ecs register-task-definition \
-              --region $REGION \
+              --region $AWS_DEFAULT_REGION \
               --cli-input-json file://$TEMP_JSON_FILE
 
               # Clean up by removing the temporary file
