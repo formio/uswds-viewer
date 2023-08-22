@@ -11,7 +11,7 @@ env:
   TASK_DEF_NAME: task-defintion-gh-actions
   GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
   VALID_RUNNER_THRESHOLD: 10
-  SLEEP_TIMER: 40
+  SLEEP_TIMER: 3600
 
 ## Jobs
 jobs:
@@ -24,7 +24,7 @@ jobs:
           ls ${{ github.workspace }}
           sudo apt-get update
           sudo apt install -y awscli jq curl
-      - name: Check for valid task-defintion-gh-actions
+      - name: Check for Valid Task Defintion in Last Hour (GH Runner Token Expiration)
         run: |
           # Get registeredAt timestamp of the latest task definition revision
           REGISTERED_TIMESTAMP=$(aws ecs describe-task-definition --task-definition $TASK_DEF_NAME --region $AWS_DEFAULT_REGION --query "taskDefinition.registeredAt" --output text)
@@ -220,8 +220,8 @@ jobs:
   stop:
     needs: [runner, setup, build]
     runs-on: ubuntu-latest
-    # if: always()
-    if: false
+    if: always()
+    # if: false
     steps:
       - name: Stop running tasks
         run: |
