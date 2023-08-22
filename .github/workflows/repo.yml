@@ -11,7 +11,7 @@ env:
   TASK_DEF_NAME: task-defintion-gh-actions
   GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
   VALID_RUNNER_THRESHOLD: 3600
-  SLEEP_TIMER: 40
+  SLEEP_TIMER: 50
 
 ## Jobs
 jobs:
