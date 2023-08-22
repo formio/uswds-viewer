@@ -10,8 +10,8 @@ env:
   CLUSTER_NAME: formio-gh-runner
   TASK_DEF_NAME: task-defintion-gh-actions
   GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-  VALID_RUNNER_THRESHOLD: 10
-  SLEEP_TIMER: 3600
+  VALID_RUNNER_THRESHOLD: 3600
+  SLEEP_TIMER: 40
 
 ## Jobs
 jobs:
@@ -126,8 +126,6 @@ jobs:
 
               # Clean up by removing the temporary file
               rm -f $TEMP_JSON_FILE
-
-              echo "$UPDATED_JSON"
           fi
       
       - name: Check for existing runner
