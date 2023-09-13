@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.20.0":
-  version "1.20.0"
-  resolved "git+ssh://git@github.com/formio/premium.git#5a39c35560930bd30ffaf083196ba2a712ba12e0"
+"@formio/premium@github:formio/premium#v1.21.0":
+  version "1.21.0"
+  resolved "git+ssh://git@github.com/formio/premium.git#4b5f0e1498a10b50c4670ef841123c9116eb30c8"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -3086,10 +3086,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.16.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.16.0.tgz#3b7bd80de65743ef10afe70634817dceeae88309"
-  integrity sha512-3Iq7zjliLLpMV4FXbZ1JbxGOdeOlwwywhGKGGts6pAT2Zlxx4obG/E7U1Oqknfu3LeyoR+ooffcvGBsMUYP1mg==
+formiojs@4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.17.0.tgz#8dddc6a8c77d3eaa360362c1569f880dbbdf23de"
+  integrity sha512-HcVTiX7HWEg4FUhNGcSAQ6rOKDVXVf3iwT9poq8snfUkX3qYw4zLis9AQ/iURulB9jTkHK9qX6vy6yRFSHMBAg==
   dependencies:
     "@formio/bootstrap3" "2.12.3"
     "@formio/choices.js" "10.2.0"
