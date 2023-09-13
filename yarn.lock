@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.20.0-rc.2":
-  version "1.20.0-rc.2"
-  resolved "git+ssh://git@github.com/formio/premium.git#eac24aac50a5c5a843367fe68702975fe6fdc80c"
+"@formio/premium@github:formio/premium#v1.20.0":
+  version "1.20.0"
+  resolved "git+ssh://git@github.com/formio/premium.git#5a39c35560930bd30ffaf083196ba2a712ba12e0"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -993,10 +993,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.4.8":
-  version "2.4.8"
-  resolved "https://registry.npmjs.org/@formio/uswds/-/uswds-2.4.8.tgz#6b1d7bd40b91ba62b23a494d3a8c86805ebf8912"
-  integrity sha512-sBEwGxbcs52w9yZQV2Bg8Z89e5aV4fqH1b+UxeM31KduXlqLuG7KHMbd6ZA8ifyUiR8bGwBoZXGHSlXhTIlgMQ==
+"@formio/uswds@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.0.tgz#775e8f4cf6d65d7aa46c8eda858cf2bd0b40a9ec"
+  integrity sha512-txxuS0ddD/M+/BWDT9tUEHKoJQ5y3GaQaKt/i4vBgpDcO/vKR1USEcnrUrPUSSbTv1ffH4PSHmc9vCB0YTAsvw==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
@@ -3086,10 +3086,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.16.0-rc.11:
-  version "4.16.0-rc.11"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.16.0-rc.11.tgz#5d965bb661ad215ab51203c3a4dd6bd0fb401052"
-  integrity sha512-AWqGXeW0szqxMsVkPLZBK3CBy3N7OtwpHsf2AZwCMsuJKldUDHWwuOtoyR1SVST8DtJc8mek+4BgEX8+MO/SsQ==
+formiojs@4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.16.0.tgz#3b7bd80de65743ef10afe70634817dceeae88309"
+  integrity sha512-3Iq7zjliLLpMV4FXbZ1JbxGOdeOlwwywhGKGGts6pAT2Zlxx4obG/E7U1Oqknfu3LeyoR+ooffcvGBsMUYP1mg==
   dependencies:
     "@formio/bootstrap3" "2.12.3"
     "@formio/choices.js" "10.2.0"
