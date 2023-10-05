@@ -8,9 +8,9 @@ gulp.task('flatpickr', () => gulp.src('./node_modules/flatpickr/dist/**/*').pipe
 gulp.task('formiojs', () => gulp.src('./node_modules/formiojs/dist/**/*').pipe(gulp.dest('dist/lib/formiojs')));
 gulp.task('seamless', () => gulp.src('./node_modules/seamless/build/**/*').pipe(gulp.dest('dist/lib/seamless')));
 gulp.task('font-awesome', () => gulp.src('./node_modules/font-awesome/css/font-awesome.css').pipe(gulp.dest('dist/lib/fontawesome')));
-gulp.task('uswds-styles', () => gulp.src('./node_modules/uswds/dist/css/uswds.min.css').pipe(gulp.dest('dist/lib/uswds')));
-gulp.task('uswds-img', () => gulp.src('./node_modules/uswds/dist/img/**/*').pipe(gulp.dest('dist/lib/img')));
-gulp.task('uswds-fonts', () => gulp.src(['./node_modules/uswds/dist/fonts/**/*', './node_modules/font-awesome/fonts/*']).pipe(gulp.dest('dist/fonts')));
+gulp.task('uswds-styles', () => gulp.src('./node_modules/@uswds/uswds/dist/css/uswds.min.css').pipe(gulp.dest('dist/lib/uswds')));
+gulp.task('uswds-img', () => gulp.src('./node_modules/@uswds/uswds/dist/img/**/*').pipe(gulp.dest('dist/lib/img')));
+gulp.task('uswds-fonts', () => gulp.src(['./node_modules/@uswds/uswds/dist/fonts/**/*', './node_modules/font-awesome/fonts/*']).pipe(gulp.dest('dist/fonts')));
 gulp.task('custom', () => gulp.src('./node_modules/@formio/uswds/lib/css/styles.css').pipe(gulp.dest('dist/lib/uswds')));
 gulp.task('build', gulp.series('clean', gulp.parallel(
   'html',
