@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.21.0":
-  version "1.21.0"
-  resolved "git+ssh://git@github.com/formio/premium.git#4b5f0e1498a10b50c4670ef841123c9116eb30c8"
+"@formio/premium@github:formio/premium#v1.21.1":
+  version "1.21.1"
+  resolved "git+ssh://git@github.com/formio/premium.git#b9b766e7e670662c14364654118e4af74d3dd4db"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -2519,10 +2519,10 @@ domhandler@^2.3.0:
   dependencies:
     domelementtype "1"
 
-dompurify@^2.4.1:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.4.5.tgz#0e89a27601f0bad978f9a924e7a05d5d2cccdd87"
-  integrity sha512-jggCCd+8Iqp4Tsz0nIvpcb22InKEBrGz5dw3EQJMs8HPJDsKbFIO3STYtAvCfDx26Muevn1MHVI0XxjgFfmiSA==
+dompurify@^3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.0.6.tgz#925ebd576d54a9531b5d76f0a5bef32548351dae"
+  integrity sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==
 
 domutils@^1.5.1, domutils@^1.7.0:
   version "1.7.0"
@@ -3086,10 +3086,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.17.1:
-  version "4.17.1"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.17.1.tgz#901b81fd8525ba9efb6e003253e89eae2d1f0dbe"
-  integrity sha512-+dJ+wPUSGDYo5CzGKmgUBCbTrRhRQMtPX3RkOB1XvLOOOHogYM2VvIuKi7eW/6aOzZqcLaGcVbXkeeQY345GUA==
+formiojs@4.17.2:
+  version "4.17.2"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.17.2.tgz#9ca573c7452a5d900728cefafea1ca921e193529"
+  integrity sha512-2Nc8BAoYHD7slPdm59A1U7RldBGwkUJobbBmOX5cn8pBT0N/LFc1xsJBWpwv34mECPCJ1373FHE4nX6vqFpBkw==
   dependencies:
     "@formio/bootstrap3" "2.12.4-rc.1"
     "@formio/choices.js" "10.2.0"
@@ -3104,7 +3104,7 @@ formiojs@4.17.1:
     custom-event-polyfill "^1.0.7"
     dialog-polyfill "^0.5.6"
     dom-autoscroller "^2.3.4"
-    dompurify "^2.4.1"
+    dompurify "^3.0.5"
     downloadjs "^1.4.7"
     dragula "^3.7.3"
     eventemitter3 "^4.0.7"
