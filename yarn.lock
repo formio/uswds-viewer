@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.21.1":
-  version "1.21.1"
-  resolved "git+ssh://git@github.com/formio/premium.git#b9b766e7e670662c14364654118e4af74d3dd4db"
+"@formio/premium@github:formio/premium#v1.21.2":
+  version "1.21.2"
+  resolved "git+ssh://git@github.com/formio/premium.git#6b45513776ac76a1261b2945e68f9476d4c2323a"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -1316,6 +1316,11 @@
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@zxing/text-encoding/-/text-encoding-0.9.0.tgz#fb50ffabc6c7c66a0c96b4c03e3d9be74864b70b"
   integrity sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==
+
+abortcontroller-polyfill@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/abortcontroller-polyfill/-/abortcontroller-polyfill-1.7.5.tgz#6738495f4e901fbb57b6c0611d0c75f76c485bed"
+  integrity sha512-JMJ5soJWP18htbbxJjG7bG6yuI6pRhgJ0scHHTfkUjf6wjP912xZWvM+A4sJK3gqd9E8fcPbDnOefbA9Th/FIQ==
 
 acorn-import-assertions@^1.7.6:
   version "1.8.0"
@@ -3086,16 +3091,17 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.17.2:
-  version "4.17.2"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.17.2.tgz#9ca573c7452a5d900728cefafea1ca921e193529"
-  integrity sha512-2Nc8BAoYHD7slPdm59A1U7RldBGwkUJobbBmOX5cn8pBT0N/LFc1xsJBWpwv34mECPCJ1373FHE4nX6vqFpBkw==
+formiojs@4.17.3:
+  version "4.17.3"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.17.3.tgz#bb297f81682b86ccc065dda2acae4300bb07229c"
+  integrity sha512-SVNnzAugTYJrjQslDs/r2K8NBxcV4VpyUDAlRL5MMm7esog6XJGCCDXzIpECOUjy4lUXHf//a7n3xFnzvVDp7A==
   dependencies:
     "@formio/bootstrap3" "2.12.4-rc.1"
     "@formio/choices.js" "10.2.0"
     "@formio/semantic" "2.6.1"
     "@formio/text-mask-addons" "^3.8.0-formio.2"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"
+    abortcontroller-polyfill "^1.7.5"
     autocompleter "^7.0.1"
     browser-cookies "^1.2.0"
     browser-md5-file "^1.1.1"
