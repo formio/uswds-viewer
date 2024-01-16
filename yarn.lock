@@ -961,18 +961,18 @@
   dependencies:
     resize-observer-polyfill "^1.5.1"
 
-"@formio/choices.js@10.2.1-rc.1":
-  version "10.2.1-rc.1"
-  resolved "https://registry.yarnpkg.com/@formio/choices.js/-/choices.js-10.2.1-rc.1.tgz#f955e9d81caf5a14e9af34e02285b3d05f478799"
-  integrity sha512-pJIj8UxlbTukHp6oCAdqnzJ6zt6z7W4nCsoNchP5z/LyDlOymOZvcJoa5KRJys/StVGnfiI+wUWDB5IstX6OYA==
+"@formio/choices.js@10.2.1":
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/@formio/choices.js/-/choices.js-10.2.1.tgz#d0f5c032d94f33152b6036f6a5bb42fcc4684e31"
+  integrity sha512-NCE5u7jG3XGokJP16MyAbVSUptKu/mpJYAxd4PPIoLiO/l9Do5uoOQ0MgNb9qG9qABJiOX+qNRE8q8RybY/SwQ==
   dependencies:
     deepmerge "^4.2.2"
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.22.1-rc.1":
-  version "1.22.1-rc.1"
-  resolved "git+ssh://git@github.com/formio/premium.git#7f87254cb35a8ba85034c404856603287d254ad3"
+"@formio/premium@github:formio/premium#v1.22.1":
+  version "1.22.1"
+  resolved "git+ssh://git@github.com/formio/premium.git#e309b02c6acf318884f1fd084fd36e660160cb0f"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -993,10 +993,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.5.1-rc.1":
-  version "2.5.1-rc.1"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.1-rc.1.tgz#2c68127a398eda82f33f6a581fbca0619626e847"
-  integrity sha512-O1KX457YZXaQ47Ur73EeFlK2JjDgLVLXH450xpeKM/eIYqM7QVu+nIWUwmVCUyl50vjE7Yc7lkNtU94UQEAecg==
+"@formio/uswds@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.1.tgz#130c1e9ebf4002aff74f10f7117c23269da5e367"
+  integrity sha512-4hfPSMLYqkDST6C51NkVthIVuohnh1uRy7LoxNfjEaO9pXzu/G7MVlbXP8oco1A4ZQAy4bYYZX4o1tFsrAxfNA==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
@@ -3091,13 +3091,13 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.18.1-rc.3:
-  version "4.18.1-rc.3"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.18.1-rc.3.tgz#e2a7a5e71df5bc19960805824cf4b7fbb942e4df"
-  integrity sha512-S094B7dL/iW3hxfGDmA9DsmEMi8ocEwdb+zs4zky/ZO3upTGdTllQld+e5N+KetAVFe+94W9mpSO6vqdVoteAg==
+formiojs@4.18.1:
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.18.1.tgz#5df1115d39cc29231e36e5153c9c580e07e67d15"
+  integrity sha512-1xEtww3NBwkJy1WiE5KQHMEM+uCDJNc/Dq/d11xEd3IQqyf41aIvAR4Y4FQToCdo7M7qyNTvR0TiTvXChOkNMA==
   dependencies:
     "@formio/bootstrap3" "2.12.4-rc.1"
-    "@formio/choices.js" "10.2.1-rc.1"
+    "@formio/choices.js" "10.2.1"
     "@formio/semantic" "2.6.1"
     "@formio/text-mask-addons" "^3.8.0-formio.2"
     "@formio/vanilla-text-mask" "^5.1.1-formio.1"

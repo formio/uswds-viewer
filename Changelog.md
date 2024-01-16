@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.4.1-rc.2
+### Changed
+ - Updated formiojs@4.18.1
+ - Updated @formio/premium@1.22.1
+ - Updated @formio/uswds@2.5.1
+
 ## 5.4.1-rc.1
 ### Changed
  - Updated formiojs@4.18.1-rc.3
