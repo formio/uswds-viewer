@@ -73,6 +73,26 @@ jobs:
               fi
             fi
 
+# workflows:
+#   version: 2.1
+#   do-build:
+#     jobs:
+#       - build:
+#           filters:
+#             tags:
+#               only: /.*/
+#       - docker:
+#           requires:
+#             - build
+#           filters:
+#             tags:
+#               only: /^\d+\.\d+\.\d+.*/
+#             branches:
+#               ignore: /.*/
+
+############################################################
+## Disables Circle CI (Comment/Remove to re-enable CircleCI)
+############################################################
 workflows:
   version: 2.1
   do-build:
@@ -80,12 +100,14 @@ workflows:
       - build:
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
+            branches:
+              ignore: /.*/
       - docker:
           requires:
             - build
           filters:
             tags:
-              only: /^\d+\.\d+\.\d+.*/
+              ignore: /.*/
             branches:
               ignore: /.*/
