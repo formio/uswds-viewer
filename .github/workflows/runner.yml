@@ -1,0 +1,239 @@
+# name: ECS Runner
+
+# on: push
+
+# env:
+#   NODE_VERSION: 18.x
+#   AWS_DEFAULT_REGION: us-east-1
+#   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#   CLUSTER_NAME: formio-gh-runner
+#   TASK_DEF_NAME: task-defintion-gh-actions
+#   GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+#   VALID_RUNNER_THRESHOLD: 3600
+#   SLEEP_TIMER: 45
+
+# ## Jobs
+# jobs:
+#   runner:
+#     if: true
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Install awscli
+#         run: |
+#           ls ${{ github.workspace }}
+#           sudo apt-get update
+#           sudo apt install -y awscli jq curl
+#       - name: Check for Valid Task Defintion in Last Hour (GH Runner Token Expiration)
+#         run: |
+#           # Get registeredAt timestamp of the latest task definition revision
+#           REGISTERED_TIMESTAMP=$(aws ecs describe-task-definition --task-definition $TASK_DEF_NAME --region $AWS_DEFAULT_REGION --query "taskDefinition.registeredAt" --output text)
+
+#           if [ $? -ne 0 ]; then
+#               echo "Error retrieving the latest revision for task definition: $TASK_DEF_NAME"
+#               exit 2
+#           fi
+
+#           # Convert the registeredAt timestamp to seconds since the Unix epoch
+#           REGISTERED_EPOCH=$(date --date="$REGISTERED_TIMESTAMP" +%s)
+
+#           # Get the current timestamp in seconds since the Unix epoch
+#           CURRENT_EPOCH=$(date +%s)
+
+#           # Calculate the difference in seconds
+#           DIFF_SECONDS=$((CURRENT_EPOCH - REGISTERED_EPOCH))
+
+#           # Check if the difference is less than or equal to 3600 seconds (1 hour)
+#           if [ $DIFF_SECONDS -le $VALID_RUNNER_THRESHOLD ]; then
+#               echo "true"
+#           else
+#               # Obtain the GitHub runner registration token using curl
+#               RESPONSE_JSON=$(curl -s -L \
+#               -X POST \
+#               -H "Accept: application/vnd.github+json" \
+#               -H "Authorization: Bearer $GH_ACCESS_TOKEN" \
+#               -H "X-GitHub-Api-Version: 2022-11-28" \
+#               https://api.github.com/repos/formio/uswds-viewer/actions/runners/registration-token)
+
+#               echo "$RESPONSE_JSON"
+
+#               # Extract the token from the JSON response using jq
+#               TOKEN=$(echo "$RESPONSE_JSON" | jq -r '.token')
+
+#               # Construct the task definition JSON and replace the RUNNER_TOKEN value
+#               TASK_DEFINITION_JSON=$(cat <<-EOF
+#           {
+#               "containerDefinitions": [
+#                   {
+#                       "name": "github-runner",
+#                       "image": "ryaneggz/github-runner",
+#                       "cpu": 0,
+#                       "portMappings": [],
+#                       "essential": true,
+#                       "environment": [
+#                           {
+#                               "name": "REPO_URL",
+#                               "value": "https://github.com/formio/uswds-viewer"
+#                           },
+#                           {
+#                               "name": "RUNNER_TOKEN",
+#                               "value": ""
+#                           }
+#                       ],
+#                       "mountPoints": [],
+#                       "volumesFrom": [],
+#                       "logConfiguration": {
+#                           "logDriver": "awslogs",
+#                           "options": {
+#                               "awslogs-create-group": "true",
+#                               "awslogs-group": "/ecs/expess-gh-actions-def",
+#                               "awslogs-region": "us-east-1",
+#                               "awslogs-stream-prefix": "ecs"
+#                           }
+#                       }
+#                   }
+#               ],
+#               "family": "task-defintion-gh-actions",
+#               "executionRoleArn": "arn:aws:iam::551091399009:role/ecsTaskExecutionRole",
+#               "networkMode": "awsvpc",
+#               "volumes": [],
+#               "placementConstraints": [],
+#               "requiresCompatibilities": [
+#                   "FARGATE"
+#               ],
+#               "cpu": "1024",
+#               "memory": "3072",
+#               "runtimePlatform": {
+#                   "cpuArchitecture": "X86_64",
+#                   "operatingSystemFamily": "LINUX"
+#               }
+#           }
+#           EOF
+#               )
+
+
+#               # Update the RUNNER_TOKEN in the task definition JSON using jq
+#               UPDATED_JSON=$(echo "$TASK_DEFINITION_JSON" | jq --arg runner_token "$TOKEN" '.containerDefinitions[0].environment = (.containerDefinitions[0].environment | map(if .name=="RUNNER_TOKEN" then .value = $runner_token else . end))')
+
+#               # Save the updated JSON to a temporary file
+#               TEMP_JSON_FILE=$(mktemp)
+#               echo "$UPDATED_JSON" > $TEMP_JSON_FILE
+
+#               # Register the ECS task definition using the updated JSON
+#               aws ecs register-task-definition \
+#               --region $AWS_DEFAULT_REGION \
+#               --cli-input-json file://$TEMP_JSON_FILE
+
+#               # Clean up by removing the temporary file
+#               rm -f $TEMP_JSON_FILE
+#           fi
+      
+#       - name: Check for existing runner
+#         run: |
+#           # Check if a task for the given Task Definition is already running in the specified Cluster
+#           EXISTING_TASKS=$(aws ecs list-tasks --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
+          
+#           if [ ! -z "$EXISTING_TASKS" ]; then
+#               echo "A task for the Task Definition: $TASK_DEF_NAME is already running in the Cluster: $CLUSTER_NAME."
+#           else
+#               # Fetch the first available subnet in the region
+#               SUBNETS=$(aws ec2 describe-subnets --region $AWS_DEFAULT_REGION --query 'Subnets[0].SubnetId' --output text)
+
+#               # Optionally, fetch the first available security group in the region
+#               SEC_GROUPS=$(aws ec2 describe-security-groups --region $AWS_DEFAULT_REGION --query 'SecurityGroups[0].GroupId' --output text)
+
+#               echo "Using Subnet: $SUBNETS"
+#               echo "Using Security Group: $SEC_GROUPS"
+
+#               aws ecs run-task \
+#               --region $AWS_DEFAULT_REGION \
+#               --cluster $CLUSTER_NAME \
+#               --task-definition $TASK_DEF_NAME \
+#               --launch-type FARGATE \
+#               --network-configuration "awsvpcConfiguration={subnets=[$SUBNETS],securityGroups=[$SEC_GROUPS],assignPublicIp=ENABLED}"
+
+#               sleep $SLEEP_TIMER
+#           fi
+
+#   setup:
+#     needs: runner
+#     runs-on: self-hosted
+#     steps:
+#       - run: echo "Triggered by ${{ github.event_name }} event."
+
+#       - name: Check out repository code ${{ github.repository }} on ${{ github.ref }}
+#         uses: actions/checkout@v3
+
+#       - name: Set up SSH key
+#         uses: webfactory/ssh-agent@v0.7.0
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_KEY }}
+
+#       - name: Set up Node.js ${{ env.NODE_VERSION }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ env.NODE_VERSION }}
+#           cache: 'npm'
+
+#       - name: Cache node modules
+#         uses: actions/cache@v3
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-node-
+
+#       - name: Installing dependencies
+#         if: steps.cache.outputs.cache-hit != 'true'
+#         uses: borales/actions-yarn@v4
+#         with:
+#           cmd: install --frozen-lockfile
+
+#   build:
+#     needs: setup
+#     runs-on: self-hosted
+#     steps:
+#       - name: Check out repository code ${{ github.repository }} on ${{ github.ref }}
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js ${{ env.NODE_VERSION }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ env.NODE_VERSION }}
+#           cache: 'npm'
+
+#       - name: Restore node modules from cache
+#         uses: actions/cache@v3
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-node-
+
+#       - name: Build
+#         uses: borales/actions-yarn@v4
+#         with:
+#           cmd: build
+
+#   stop:
+#     needs: [runner, setup, build]
+#     runs-on: ubuntu-latest
+#     if: always()
+#     # if: false
+#     steps:
+#       - name: Stop running tasks
+#         run: |
+#           # List running tasks for the specific Task Definition and Cluster
+#           TASKS=$(aws ecs list-tasks --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --family $TASK_DEF_NAME --query 'taskArns' --output text)
+
+#           if [ -z "$TASKS" ]; then
+#               echo "No tasks found to stop for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
+#               exit 1
+#           fi
+#           # Stop each task found for the provided Task Definition and Cluster
+#           for TASK_ARN in $TASKS; do
+#               echo "Stopping task: $TASK_ARN"
+#               aws ecs stop-task --region $AWS_DEFAULT_REGION --cluster $CLUSTER_NAME --task $TASK_ARN
+#           done
+
+#           echo "All tasks have been stopped for the Task Definition: $TASK_DEF_NAME in the Cluster: $CLUSTER_NAME"
