@@ -1292,11 +1292,14 @@ body.formio-dialog-open {
 
 .formio-component .table {
   margin-bottom: 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .formio-component-htmlelement {
   word-wrap: break-word;
+}
+.formio-component-htmlelement ol, .formio-component-htmlelement ul {
+  margin-left: 10px;
 }
 
 .editgrid-table-container {
@@ -1377,7 +1380,7 @@ body.formio-dialog-open {
 }
 
 .datagrid-table > tbody > tr > td {
-  word-break: break-all;
+  word-break: auto-phrase;
 }
 
 .formio-component-modaledit .formio-modaledit-view-container {
@@ -1522,6 +1525,9 @@ td .formio-component-modaledit .formio-modaledit-view-container {
 }
 .formio-component-textarea .ck.ck-editor__editable .image .ck-progress-bar {
   height: 4px;
+}
+.formio-component-textarea .ck.ck-editor ul, .formio-component-textarea .ck.ck-editor ol {
+  margin-left: 10px;
 }
 
 div[data-oembed-url] {
@@ -2277,6 +2283,6 @@ span[role=link] {
 }
 
 .builder-component-selected {
-  border: 2px dashed #e8e8e8;
+  border: 2px dashed #919191;
   outline: none !important;
 }

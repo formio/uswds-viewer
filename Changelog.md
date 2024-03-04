@@ -4,6 +4,118 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.5.1-rc.3
+
+## 5.5.0
+### Changed
+ - Official Release
+
+## 5.5.0-rc.6
+### Changed
+ - Updated formiojs@4.19.0
+ - Updated @formio/premium@1.22.2
+
+## 5.5.0-rc.5
+### Changed
+ - Updated formiojs@4.19.0-rc.5
+ - Updated @formio/premium@1.22.2-rc.1
+
+ - Updated pdf-server 5.5.0-rc.5
+   
+## 5.4.1
+### Changed
+ - Official Release
+
+## 5.4.1-rc.2
+### Changed
+ - Updated formiojs@4.18.1
+ - Updated @formio/premium@1.22.1
+ - Updated @formio/uswds@2.5.1
+
+## 5.4.1-rc.1
+### Changed
+ - Updated formiojs@4.18.1-rc.3
+ - Updated @formio/premium@1.22.1-rc.1
+ - Updated @formio/uswds@2.5.1-rc.1
+
+ - Updated pdf-server 5.4.1-rc.2
+   
+## 5.3.6
+### Changed
+ - Official Release
+ - Updated formiojs@4.17.5
+ - Updated @formio/premium@1.21.4
+
+## 5.3.6-rc.1
+### Changed
+ - Updated formiojs@4.17.5-rc.1
+ - Updated @formio/premium@1.21.4-rc.1
+
+
+## 5.3.5
+### Changed
+ - Official Release
+
+## 5.3.5-rc.1
+### Changed
+ - Updated formiojs@4.17.4
+ - Updated @formio/premium@1.21.3
+ - Updated pdf-server 5.3.5
+   
+## 5.3.4
+### Changed
+ - Official Release
+
+## 5.3.4-rc.1
+### Changed
+ - Updated formiojs@4.17.3
+ - Updated @formio/premium@1.21.2
+ - Updated pdf-server 5.3.4
+
+## 5.3.2
+### Changed
+ - Official Release
+
+## 5.3.2-rc.1
+### Changed
+ - Updated formiojs@4.17.2
+ - Updated @formio/premium@1.21.1
+
+
+## 5.3.1
+### Changed
+ - Official Release
+
+## 5.3.1-rc.1
+### Changed
+ - Updated formiojs@4.17.1
+ - Updated pdf-server@5.3.1
+
+## 5.3.0
+### Changed
+ - Official Release
+
+## 5.3.0-rc.1
+### Changed
+ - Updated formiojs@4.17.0
+ - Updated @formio/premium@1.21.0
+ - Increment minor version
+ - Updated pdf-server@5.3.0
+
+## 5.2.0
+### Changed
+ - Official Release
+ - Updated formiojs@4.16.0
+ - Updated @formio/premium@1.20.0
+ - Updated @formio/uswds@2.5.0
+
+## 5.2.0-rc.6
+### Changed
+ - Updated formiojs@4.16.0-rc.11
+
+### Changed
+ - Updated pdf-server@5.2.0-rc.6
+   
 ## 5.2.0-rc.4
 ### Changed
  - Updated pdf-server@5.2.0-rc.4
