@@ -1,9 +1,28 @@
 version: 2.1
+
+parameters:
+  run_circle_ci:
+    type: boolean
+    default: false
+
+commands:
+  check-run-condition:
+    description: "Check if the job should run based on pipeline parameter"
+    steps:
+      - run:
+          name: Checking if job should run
+          command: |
+            if [ "<< pipeline.parameters.run_circle_ci >>" = "false" ]; then
+              echo "Job halted based on pipeline parameter."
+              circleci-agent step halt
+            fi
+
 jobs:
   build:
     docker:
       - image: cimg/node:lts
     steps:
+      - check-run-condition
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -33,6 +52,7 @@ jobs:
     docker:
       - image: cimg/node:lts
     steps:
+      - check-run-condition
       - setup_remote_docker:
           version: 19.03.13
       - checkout
@@ -53,6 +73,26 @@ jobs:
               fi
             fi
 
+# workflows:
+#   version: 2.1
+#   do-build:
+#     jobs:
+#       - build:
+#           filters:
+#             tags:
+#               only: /.*/
+#       - docker:
+#           requires:
+#             - build
+#           filters:
+#             tags:
+#               only: /^\d+\.\d+\.\d+.*/
+#             branches:
+#               ignore: /.*/
+
+############################################################
+## Disables Circle CI (Comment/Remove to re-enable CircleCI)
+############################################################
 workflows:
   version: 2.1
   do-build:
@@ -60,12 +100,14 @@ workflows:
       - build:
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
+            branches:
+              ignore: /.*/
       - docker:
           requires:
             - build
           filters:
             tags:
-              only: /^\d+\.\d+\.\d+.*/
+              ignore: /.*/
             branches:
               ignore: /.*/
