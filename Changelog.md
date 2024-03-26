@@ -4,8 +4,12 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 5.5.2-rc.1
+## [Unreleased: 5.5.2-rc.2]
+ - FIO-7146: uswds-viewer-circleci-to-ghactions
 
+## 5.5.2-rc.1
+ - Update to pdf-server@5.5.2-rc.1
+   
 ## 5.5.1
 ### Changed
  - Official Release
