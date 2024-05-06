@@ -1003,9 +1003,9 @@
   resolved "https://registry.yarnpkg.com/@formio/vanilla-text-mask/-/vanilla-text-mask-5.1.1-formio.1.tgz#f53fc7f4cb37c6ae38f2857488055e781e5adba9"
   integrity sha512-rYBlvIPMNUd6sAaduOaiIwI4vfTAjHDRonko2qJn2RP1O//TQ7rcFIPYVYePJZ4OtOpwHiHAvAIh79McphZotQ==
 
-"@formio/vpat@github:formio/vpat#v2.5.1":
-  version "2.5.1"
-  resolved "git+ssh://git@github.com/formio/vpat.git#9197a7c7c8f3a48c40b0a8b3f0c7d30ca129e035"
+"@formio/vpat@github:formio/vpat#v2.5.2":
+  version "2.5.2"
+  resolved "git+ssh://git@github.com/formio/vpat.git#6f2d5f29ab15301e80e7ef7bb4c4197db6566c38"
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
@@ -3091,10 +3091,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.19.0:
-  version "4.19.0"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.19.0.tgz#09df6ea456be21947da9ea34f63849080ceac1b7"
-  integrity sha512-0Cft6mfvqglEDUngYSVhBHr003T7DdznSF4yMjNPLSr5QUwJnJe+sIJyhmHj4/9MvZnn7+s7wmq0DG6bHCrIBQ==
+formiojs@4.19.2:
+  version "4.19.2"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.19.2.tgz#e1532dc5a4c4b785a345b2ab8698bf82d04c1376"
+  integrity sha512-SCeD3vZ/vY36H2Ws0/G8j3Yzg9rkgJVpKm0Gn+SrItFQooJfZV6wem7LHStL2ur/nGtT1bHuWZ4LyDgTPpF5rw==
   dependencies:
     "@formio/bootstrap3" "2.12.4-rc.1"
     "@formio/choices.js" "10.2.1"
