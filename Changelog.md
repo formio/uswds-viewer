@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.5.6-rc.1]
+## 5.5.6-rc.1
+### Changed
+ - Updated formiojs@4.19.4-rc.2
+ - Updated @formio/vpat@2.5.4-rc.1
+
 ### Changed
  - Updated pdf-server@5.5.6-rc.1
 
