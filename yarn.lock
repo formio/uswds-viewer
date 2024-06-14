@@ -1003,9 +1003,9 @@
   resolved "https://registry.yarnpkg.com/@formio/vanilla-text-mask/-/vanilla-text-mask-5.1.1-formio.1.tgz#f53fc7f4cb37c6ae38f2857488055e781e5adba9"
   integrity sha512-rYBlvIPMNUd6sAaduOaiIwI4vfTAjHDRonko2qJn2RP1O//TQ7rcFIPYVYePJZ4OtOpwHiHAvAIh79McphZotQ==
 
-"@formio/vpat@github:formio/vpat#v2.5.4-rc.3":
-  version "2.5.4-rc.3"
-  resolved "git+ssh://git@github.com/formio/vpat.git#7fe0d589e52bab700c74163f2b4e0b2605211a48"
+"@formio/vpat@github:formio/vpat#v2.5.4-rc.4":
+  version "2.5.4-rc.4"
+  resolved "git+ssh://git@github.com/formio/vpat.git#11dd1b8bc235d971f82ab86eb4545359470cd7fe"
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
