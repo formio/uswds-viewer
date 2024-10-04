@@ -993,10 +993,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.1.tgz#130c1e9ebf4002aff74f10f7117c23269da5e367"
-  integrity sha512-4hfPSMLYqkDST6C51NkVthIVuohnh1uRy7LoxNfjEaO9pXzu/G7MVlbXP8oco1A4ZQAy4bYYZX4o1tFsrAxfNA==
+"@formio/uswds@2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.2.tgz#5037f5b8c4a810e2c914ee62925e3be2447e1739"
+  integrity sha512-qLGnExboiCyj+rZ/rY+llQocUnlXMxxCPwU1XDkLtH50KlLMBr9qmWSRyYp/bl0xHjCOrGoxbS26RGN5JhTbiA==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
