@@ -4,8 +4,65 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.8.0-rc.1]
- - Updated pdf-server@5.8.0-rc.1
+## [Unreleased: 5.10.1-rc.1]
+### Changed
+ - Updated pdf-server@5.10.0-rc.1
+   
+## 5.9.2
+### Changed
+ - Official Release
+
+## 5.9.2-rc.2
+### Changed
+ - Updated pdf-server@5.9.2-rc.2
+
+## 5.9.2-rc.1
+### Changed
+ - Updated @formio/uswds@2.5.2
+ - Updated pdf-server@5.9.2-rc.1
+
+## 5.9.1-rc.1
+### Changed
+ - Updated formiojs@4.21.2
+ - Updated @formio/premium@2.0.3
+
+### Changed
+ - Update pdf-server@5.9.1
+   
+## 5.9.0
+### Changed
+ - Official Release
+
+## 5.9.0-rc.2
+ - Update pdf-server@5.9.0-rc.1
+   
+## 5.9.0-rc.1
+### Changed
+ - Updated formiojs@4.21.1
+ - Increment minor version.
+ - Update pdf-server@5.9.0-rc.1
+
+## 5.8.0
+### Changed
+ - Official Release
+ - Updated formiojs@4.21.1
+ - Updated @formio/premium@2.0.2
+
+## 5.8.0-rc.3
+### Changed
+ - Updated formiojs@4.21.1-rc.1
+ - Updated @formio/premium@2.0.2-rc.1
+
+## 5.8.0-rc.2
+### Changed
+ - Updated formiojs@4.21.0
+
+## 5.7.0-rc.1
+### Changed
+ - Increment minor version.
+
+### Changed
+ - Upgrade base image to 5.7.1-rc.3
    
 ## 5.5.6
 ### Changed
