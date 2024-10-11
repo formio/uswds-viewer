@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v1.22.3":
-  version "1.22.3"
-  resolved "git+ssh://git@github.com/formio/premium.git#340d9a482eedb45069b733c1d0da6bc2c1981eee"
+"@formio/premium@github:formio/premium#v2.0.4":
+  version "2.0.4"
+  resolved "git+ssh://git@github.com/formio/premium.git#0de43dcae1c08db1a0398542bc47439a2a98b0ae"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
@@ -993,10 +993,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.2.tgz#b9489e68911c70a31997b97dd846d8a7cca6abdb"
   integrity sha512-H4Sm+1Sx59jbrlKxtKbzethhp5OIcP8Oi4JBpsvH/SB8P/KCRmtjKbN5ACqURnXmYtBHLJC6Yr9KZibOVRGxpA==
 
-"@formio/uswds@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.1.tgz#130c1e9ebf4002aff74f10f7117c23269da5e367"
-  integrity sha512-4hfPSMLYqkDST6C51NkVthIVuohnh1uRy7LoxNfjEaO9pXzu/G7MVlbXP8oco1A4ZQAy4bYYZX4o1tFsrAxfNA==
+"@formio/uswds@2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.5.2.tgz#5037f5b8c4a810e2c914ee62925e3be2447e1739"
+  integrity sha512-qLGnExboiCyj+rZ/rY+llQocUnlXMxxCPwU1XDkLtH50KlLMBr9qmWSRyYp/bl0xHjCOrGoxbS26RGN5JhTbiA==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
@@ -3091,10 +3091,10 @@ formidable@^1.2.1:
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
   integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
-formiojs@4.19.4:
-  version "4.19.4"
-  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.19.4.tgz#fc1209369d56d30a0acc7dcfe5e78623e21b7312"
-  integrity sha512-bVWAqyJ4gb8lGXHLi/XKJGu4Sn0IPBM3IporBtMcOBEUVtNKn3/PLB2lGKbzh5rF2QeEX1Uwb81oeakzDdSUTA==
+formiojs@4.21.5-rc.6:
+  version "4.21.5-rc.6"
+  resolved "https://registry.yarnpkg.com/formiojs/-/formiojs-4.21.5-rc.6.tgz#2f10c1ddb8713425c891e5738c079dfd0f25672d"
+  integrity sha512-2tRUKcva1L52WsBi9TASMq+67mXz/HMZ5UTWGveJAdFoxTkRa4HQ3SoHQ1Lklu8MFt93xhLMrh0uNgACir9S1Q==
   dependencies:
     "@formio/bootstrap3" "2.12.4-rc.1"
     "@formio/choices.js" "10.2.1"
@@ -3119,6 +3119,7 @@ formiojs@4.19.4:
     fetch-ponyfill "^7.1.0"
     i18next "22.4.12"
     idb "^7.1.1"
+    inputmask "^5.0.9"
     ismobilejs "^1.1.1"
     json-logic-js "^2.0.2"
     jstimezonedetect "^1.0.7"
@@ -3751,6 +3752,11 @@ inline-source@~6.1.8:
     superagent "~5.0.5"
     svgo "~1.2.2"
     terser "~3.17.0"
+
+inputmask@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/inputmask/-/inputmask-5.0.9.tgz#7bf4e83f5e199c88c0edf28545dc23fa208ef4be"
+  integrity sha512-s0lUfqcEbel+EQXtehXqwCJGShutgieOaIImFKC/r4reYNvX3foyrChl6LOEvaEgxEbesePIrw1Zi2jhZaDZbQ==
 
 internal-slot@^1.0.3:
   version "1.0.3"
