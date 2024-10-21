@@ -970,9 +970,9 @@
     fuse.js "^6.6.2"
     redux "^4.2.0"
 
-"@formio/premium@github:formio/premium#v2.0.6-rc.1":
-  version "2.0.6-rc.1"
-  resolved "git+ssh://git@github.com/formio/premium.git#757874e0f64fe82712ca707a74a34d411ba6bbca"
+"@formio/premium@github:formio/premium#v2.0.6":
+  version "2.0.6"
+  resolved "git+ssh://git@github.com/formio/premium.git#011c17c388dd9f9847d528b0d698f919172d58f2"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.18.6"
