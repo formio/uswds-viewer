@@ -4,11 +4,6 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.10.2]
-### Changed
- - Official Release
- - Update pdf-server@5.10.2
-   
 ## 5.10.1
 ### Changed
  - Official Release
