@@ -1,6 +1,6 @@
 {
   "name": "uswds-viewer",
-  "version": "5.10.3-rc.4",
+  "version": "5.10.3-rc.5",
   "description": "A Form.io form viewer application for US Web Design Standards",
   "main": "index.js",
   "scripts": {
