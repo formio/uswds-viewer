@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased: 5.10.7-rc.3]
 ### Changed
- - Update pdf-server@5.10.7-rc.2
+ - Update pdf-server@5.10.7-rc.3
 
 ## 5.10.7-rc.2
 ### Changed
