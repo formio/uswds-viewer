@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased: 5.10.16-rc.1]
+### Changed
+ - Updated pdf-server@5.10.16-rc.1
+
 ## 5.10.15
 ### Changed
  - Official Release
@@ -11,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 5.10.15-rc.1
 ### Changed
  - Updated pdf-server@5.10.15-rc.1
-   
+
 ## 5.10.14
 ### Changed
  - Official Release
