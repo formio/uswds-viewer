@@ -4,9 +4,72 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.10.4-rc.1]
+## [Unreleased: 5.11.0-rc.1]
+
+## 5.10.16
 ### Changed
- - Update pdf-server@5.10.4-rc.1
+ - Official Release
+ - Updated pdf-server@5.10.16
+
+## 5.10.15
+### Changed
+ - Official Release
+ - Updated pdf-server@5.10.15
+
+## 5.10.14
+### Changed
+ - Official Release
+ - Updated formiojs@4.21.7
+ - Updated pdf-server@5.10.14
+
+## 5.10.13
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.13
+
+## 5.10.12
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.12
+
+## 5.10.11
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.11
+
+## 5.10.10
+### Changed
+ - Official Release
+
+## 5.10.9
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.9
+
+## 5.10.8
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.8
+
+## 5.10.7
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.7
+
+## 5.10.6
+### Changed
+ - Official Release
+
+## 5.10.5
+### Changed
+ - Official Release
+ - Update pdf-server@5.10.5
+
+## 5.10.4
+### Changed
+ - Official Release
+ - Updated @formio/premium@2.0.7
+ - Updated formiojs@4.21.6
 
 ## 5.10.3
 ### Changed
