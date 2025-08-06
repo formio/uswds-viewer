@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/formio/formio-viewer#readme",
   "dependencies": {
+    "@formio/js": "^5.2.0",
     "@formio/premium": "github:formio/premium#v3.0.6",
     "@formio/uswds": "2.6.0",
     "@formio/vpat": "github:formio/vpat#v2.6.0",
