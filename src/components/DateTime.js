@@ -1,5 +1,5 @@
 import './ViewerCalendar';
-import DateTimeComponent from 'formiojs/components/datetime/DateTime';
+import DateTimeComponent from '@formio/js/components/datetime/DateTime';
 export default class ViewerDateTime extends DateTimeComponent {
   constructor(component, options, data) {
     super(component, options, data);
