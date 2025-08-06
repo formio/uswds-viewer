@@ -912,9 +912,9 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@github:formio/premium#v3.0.6":
-  version "3.0.6"
-  resolved "git+ssh://git@github.com/formio/premium.git#44a951c294ffecc240990a1a9fcab16cb369b27e"
+"@formio/premium@github:formio/premium#v3.0.7-rc.3":
+  version "3.0.7-rc.3"
+  resolved "git+ssh://git@github.com/formio/premium.git#0aedfbcdaaf858b73f60432d108b1144796e03b0"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"

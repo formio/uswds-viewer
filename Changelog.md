@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased: 5.11.0-rc.32]
+## 5.11.0-rc.32
+### Changed
+ - Updated @formio/premium@3.0.7-rc.3
+
 
 ## 5.10.16
 ### Changed
