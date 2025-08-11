@@ -20,4 +20,4 @@
 #######################################################
 
 FROM formio/pdf-server:5.11.0-rc.31
-COPY ./dist /src/node_modules/formio-viewer/dist/
+COPY ./dist /src/node_modules/@formio/viewer/dist/
