@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased: 5.11.0-rc.36]
+### Changed
+ - Updated pdf-server@5.11.0-rc.36
+
 ## 5.11.0-rc.34
 ### Changed
  - Updated @formio/premium@3.0.7
