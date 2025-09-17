@@ -912,9 +912,9 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@github:formio/premium#v3.0.7-rc.3":
-  version "3.0.7-rc.3"
-  resolved "git+ssh://git@github.com/formio/premium.git#0aedfbcdaaf858b73f60432d108b1144796e03b0"
+"@formio/premium@github:formio/premium#v3.0.7":
+  version "3.0.7"
+  resolved "git+ssh://git@github.com/formio/premium.git#628220acac02c54b58d0d2845a98aaead0e1fb61"
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
@@ -930,10 +930,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.4.tgz#f3ce4bf978c6c5e8f671641d96f6fd116f7c92a3"
   integrity sha512-vhkeIyuL+1rtC9S4IW8O3JCwroPtvJrkrcMO4wyELNqMIgQRKbiyBAitZfUP4tY04xdB5lxAinbzdwb+NMdX6w==
 
-"@formio/uswds@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.6.0.tgz#674aa821489040d9237f72bf89291756b1473524"
-  integrity sha512-tB6BXZkyYiN5ZzeDZXnnOAS2Yr4itaXgl1LBBY7JwMIPRICHxtjLty8aGDldt2pO789GGOwdPT1aojJsQqeiYw==
+"@formio/uswds@2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.6.1.tgz#aede06f5547c81bb523d876bf1542969d2a237d0"
+  integrity sha512-lBd5siMq5FzaDHKpdHqCZkN9Wx4s8gCos0fZ6IoI9TJX/dNJB5e+1b5iG+9QnsGi4iKAQurOxSmN5vKPX1W6yg==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"

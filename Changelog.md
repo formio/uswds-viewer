@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.11.0-rc.34
+### Changed
+ - Updated @formio/premium@3.0.7
+ - Updated @formio/uswds@2.6.1
+
 ## 5.11.0-rc.33
 ### Changed
  - FIO-10526: udate viewer path in Dockerfile
