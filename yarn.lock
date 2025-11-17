@@ -921,14 +921,17 @@
     uuid "^9.0.0"
     vanilla-picker "^2.12.3"
 
-"@formio/premium@github:formio/premium#v3.0.6":
-  version "3.0.6"
-  resolved "git+ssh://git@github.com/formio/premium.git#44a951c294ffecc240990a1a9fcab16cb369b27e"
+"@formio/premium@3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@formio/premium/-/premium-3.0.8.tgz#6435c760d0554c9265ef1fe985d2bab7ac4ad85d"
+  integrity sha512-wcW1JE60NT3nEVQUrVlippqfTzdZWragc6NJBRL5Gq1SM8bt0Wa3W4GkpkP7EOd80NBdYijz5+tonUqQmGOQkw==
   dependencies:
     "@juggle/resize-observer" "^3.4.0"
     "@zxing/library" "^0.21.2"
     dayjs "^1.11.12"
     jose "^5.6.3"
+    jsdom-global "^3.0.2"
+    lodash "^4.17.21"
     papaparse "^5.3.1"
     tooltip.js "^1.3.3"
     two.js "^0.7.13"
@@ -939,10 +942,10 @@
   resolved "https://registry.yarnpkg.com/@formio/text-mask-addons/-/text-mask-addons-3.8.0-formio.4.tgz#f3ce4bf978c6c5e8f671641d96f6fd116f7c92a3"
   integrity sha512-vhkeIyuL+1rtC9S4IW8O3JCwroPtvJrkrcMO4wyELNqMIgQRKbiyBAitZfUP4tY04xdB5lxAinbzdwb+NMdX6w==
 
-"@formio/uswds@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.6.0.tgz#674aa821489040d9237f72bf89291756b1473524"
-  integrity sha512-tB6BXZkyYiN5ZzeDZXnnOAS2Yr4itaXgl1LBBY7JwMIPRICHxtjLty8aGDldt2pO789GGOwdPT1aojJsQqeiYw==
+"@formio/uswds@2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@formio/uswds/-/uswds-2.6.1.tgz#aede06f5547c81bb523d876bf1542969d2a237d0"
+  integrity sha512-lBd5siMq5FzaDHKpdHqCZkN9Wx4s8gCos0fZ6IoI9TJX/dNJB5e+1b5iG+9QnsGi4iKAQurOxSmN5vKPX1W6yg==
 
 "@formio/vanilla-text-mask@^5.1.1-formio.1":
   version "5.1.1-formio.1"
@@ -4272,6 +4275,11 @@ js-yaml@^3.13.1:
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
+
+jsdom-global@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/jsdom-global/-/jsdom-global-3.0.2.tgz#6bd299c13b0c4626b2da2c0393cd4385d606acb9"
+  integrity sha512-t1KMcBkz/pT5JrvcJbpUR2u/w1kO9jXctaaGJ0vZDzwFnIvGWw9IDSRciT83kIs8Bnw4qpOl8bQK08V01YgMPg==
 
 jsesc@^3.0.2:
   version "3.1.0"
