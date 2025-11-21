@@ -1,4 +1,3 @@
-
 #######################################################
 ##  This repo can be used to replace the standard    ##
 ##  viewer within the formio-files-core server       ##
@@ -19,5 +18,5 @@
 ##                                                   ##
 #######################################################
 
-FROM formio/pdf-server:5.10.17
+FROM formio/pdf-server:5.10.18-rc.0
 COPY ./dist /src/node_modules/formio-viewer/dist/
