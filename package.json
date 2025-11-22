@@ -22,7 +22,7 @@
   "dependencies": {
     "@formio/js": "^5.2.0",
     "@formio/premium": "github:formio/premium#v3.0.6",
-    "@formio/uswds": "2.6.1",
+    "@formio/uswds": "2.6.2",
     "@formio/vpat": "github:formio/vpat#v2.6.0",
     "@uswds/uswds": "^3.8.2",
     "autocompleter": "^6.1.3",
