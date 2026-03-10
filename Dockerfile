@@ -18,5 +18,5 @@
 ##                                                   ##
 #######################################################
 
-FROM formio/pdf-server:5.10.20-rc.1
+FROM formio/pdf-server:5.10.20
 COPY ./dist /src/node_modules/formio-viewer/dist/
